@@ -1,0 +1,96 @@
+<div class="animated fadeIn">
+  <div class="card">
+    <div class="card-body">
+      <div class="row">
+        <div class="col-sm-5">
+          <h4 class="card-title mb-0">Services</h4>
+          <div class="small text-muted mt-10"></div>
+        </div>
+        <!--/.col-->
+      </div>
+      <br />
+      <div class="search-field">
+        <form [formGroup]="filters" (ngSubmit)="handleSearch()">
+          <div class="status">
+            <label for="status" class="label">Select Status: </label>
+            <br />
+            <select
+              (change)="statusChanged($event)"
+              name="status"
+              formControlName="status"
+              [(ngModel)]="defaultOption"
+              class="select-box"
+            >
+              <option [value]="default" [disabled]="true">Select Status</option>
+              <option *ngFor="let list of statusList">{{ list }}</option>
+            </select>
+          </div>
+          <div class="isActive">
+            <label for="isActive" class="label">Select Active: </label>
+            <br />
+            <select
+              (change)="activeStatusChanged($event)"
+              name="isActive"
+              formControlName="isActive"
+              [(ngModel)]="defaultOptionNew"
+              class="select-box"
+            >
+              <option [value]="default" [disabled]="true">Select Active</option>
+              <option *ngFor="let list of activeStatusList">{{ list }}</option>
+            </select>
+          </div>
+          <div class="propertyName">
+            <label for="propertyName" class="label"
+              >Enter Property Name:
+            </label>
+            <input
+              type="text"
+              name="propertyName"
+              formControlName="propertyName"
+              class="form-control"
+            />
+          </div>
+          <div class="btn-container">
+            <input type="Submit" value="Search" class="btn-primary btn" />
+          </div>
+          <div class="btn-container">
+            <input
+              type="button"
+              value="Reset"
+              class="btn-primary btn"
+              (click)="Reset()"
+            />
+          </div>
+        </form>
+      </div>
+      <!--/.row-->
+      <div class="col pt-3 pb-3">
+        <ag-grid-angular
+          #servicesGrid
+          style="width: 100%; height: 60vh"
+          class="ag-theme-alpine"
+          [rowData]="rowData"
+          [gridOptions]="gridOptions"
+          (rowClicked)="onRowClicked($event)"
+        >
+        </ag-grid-angular>
+      </div>
+      <div class="row">
+        <div class="col-6"></div>
+        <div class="col-6">
+          <div style="float: right">
+            <pager
+              [totalItems]="totalItems"
+              [(ngModel)]="currentPager"
+              (pageChanged)="pageChanged($event)"
+              pageBtnClass="btn"
+              [itemsPerPage]="itemsPerPage"
+              class="pull-left"
+            >
+            </pager>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

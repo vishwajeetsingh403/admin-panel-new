@@ -1,0 +1,19 @@
+// If you want to override variables do it here
+@import "variables";
+
+// Import styles
+@import "~@coreui/coreui/scss/coreui";
+
+// If you want to add something do it here
+@import "custom";
+
+// angular grid styles
+@import "ag-grid-community/dist/styles/ag-grid";
+@import "ag-grid-community/dist/styles/ag-theme-alpine";
+
+//Toaster
+@import "~ngx-toastr/toastr";
+
+.modal {
+  top: 25%;
+}

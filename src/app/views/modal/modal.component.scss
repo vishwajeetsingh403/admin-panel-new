@@ -1,0 +1,27 @@
+.modal-content {
+  height: 20rem;
+}
+
+.modal-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 0 8rem;
+}
+
+.seperator {
+  text-align: center;
+  font-weight: bold;
+}
+
+.btn-primary {
+  outline: none;
+  border: none;
+  padding: 6px;
+  border-radius: 4px;
+}
+
+.modal-footer {
+  display: flex;
+  border: none;
+}

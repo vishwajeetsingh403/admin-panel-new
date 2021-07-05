@@ -1,0 +1,8 @@
+export enum PublishingStatusEnum {
+  DRAFT = "DRAFT",
+  IN_REVIEW = "IN_REVIEW",
+  REJECTED = "REJECTED",
+  PUBLISHED = "PUBLISHED",
+  APPROVED = "APPROVED",
+  UNPUBLISHED = "UNPUBLISHED",
+}
