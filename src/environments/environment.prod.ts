@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  baseUrl: "https://api.almien.com",
+  baseUrl: "http://api-staging.almien.com",
 };
