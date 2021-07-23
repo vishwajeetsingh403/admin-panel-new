@@ -5,5 +5,5 @@
 
 export const environment = {
   production: false,
-  baseUrl: "http://api-staging.almien.com",
+  baseUrl: "https://api-staging.almien.com",
 };
